@@ -1,3 +1,8 @@
+/*
+ This is used as the lookup for the search bar
+
+*/
+
 export const pokemonLookUp = [
     "Bulbasaur",
     "Ivysaur",
