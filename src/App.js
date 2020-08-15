@@ -33,7 +33,7 @@ function App(props) {
 
     } else {
 
-      const pokemonFilteredArr = pokemonLookUp.filter(el =>el.toLowerCase().includes(inputValue.toLowerCase()))
+      const pokemonFilteredArr = pokemonLookUp.filter(el => el.toLowerCase().includes(inputValue.toLowerCase()))
 
       setSearchValue(pokemonFilteredArr);
 
@@ -41,28 +41,39 @@ function App(props) {
 
   }
 
-  function test(e) {
+  function searchResulthandleClick(event) {
 
-    const a = (parseInt(e.target.id))
-    setPokemon(a)
+    const parsedPokemonId = setPokemon((parseInt(event.target.id)))
+    const SearchValueReset = document.getElementById("search-box").value = "";
+    setSearchValue([])
 
   }
 
   function next() {
 
-    return searchValue.slice(0, 10).map(i =>
+    if (searchValue === []) {
 
-      <button
-        className="searchValueButton"
-        key={i}
-        id={pokemonLookUp.indexOf((i))}
-        value={i}
-        ref={searchEl}
-        onClick={test}
-      >
-        {i}
-      </button >
-    )
+      return
+
+    } else {
+
+      return searchValue.slice(0, 10).map(i =>
+
+        <button
+          className="searchValueButton"
+          key={i}
+          id={pokemonLookUp.indexOf((i))}
+          value={i}
+          ref={searchEl}
+          onClick={searchResulthandleClick}
+        >
+          {i}
+        </button >
+      )
+
+    }
+
+
 
   }
 
@@ -70,17 +81,19 @@ function App(props) {
     <div className="App">
       <div className="searchBox">
 
-        <input type="text" placeholder="Search for Pokémon" name="search-box" onInput={handleChange}></input>
-
+        <input type="text" placeholder="Search for Pokémon" id="search-box" onInput={handleChange}></input>
         <ul>
           {next()}
         </ul>
+
+
 
       </div>
 
       <div className="Statistics">
 
-        <h1>{pokedex[pokemon].name.english}</h1>
+        {/*Used because url link to Farfetch'd doesnt have "'". Breaks link.  */}
+        {pokemon === 82 ? <h1>Farfetch'd</h1> : <h1>HP{pokedex[pokemon].base.Name}</h1>}
         <p>HP {pokedex[pokemon].base.HP}</p>
         <p>Attack {pokedex[pokemon].base.Attack}</p>
         <p>Defense {pokedex[pokemon].base.Defense}</p>

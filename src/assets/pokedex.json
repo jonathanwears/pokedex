@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "name": {
       "english": "Bulbasaur",
@@ -18,7 +19,7 @@
       "Sp. Defense": 65,
       "Speed": 45
     },
-      "link":"href:./sprites/001MS.png"
+    "link": "href:./sprites/001MS.png"
   },
   {
     "id": 2,
@@ -1681,10 +1682,11 @@
   {
     "id": 83,
     "name": {
-      "english": "Farfetch'd",
+      "english": "Farfetchd",
       "japanese": "カモネギ",
       "chinese": "大葱鸭",
-      "french": "Canarticho"
+      "french": "Canarticho",
+      "special": "Farfetchd"
     },
     "type": [
       "Normal",
