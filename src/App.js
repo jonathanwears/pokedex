@@ -9,6 +9,18 @@ function App(props) {
   const [searchValue, setSearchValue] = useState([]);
   const searchEl = createRef();
 
+  function specialPokeChar() {
+    // I think this is being done twice?
+    switch (pokemon) {
+
+      case 82: return <h1>Farfetch'd</h1>
+      case 32: return <h1>Nidoran♂</h1> //male -m
+      case 29: return <h1>Nidoran♀</h1> // female -f  
+      default: return pokedex[pokemon].name.english
+
+    }
+  }
+
   function randomise() {
     const randomNumber = Math.round(Math.random() * Math.floor(150));
 
@@ -28,13 +40,10 @@ function App(props) {
     const inputValue = e.target.value.trim();
 
     if (inputValue.length === 0) {
-
       setSearchValue([]);
 
     } else {
-
       const pokemonFilteredArr = pokemonLookUp.filter(el => el.toLowerCase().includes(inputValue.toLowerCase()))
-
       setSearchValue(pokemonFilteredArr);
 
     }
@@ -73,27 +82,25 @@ function App(props) {
 
     }
 
-
-
   }
 
   return (
     <div className="App">
       <div className="searchBox">
 
-        <input type="text" placeholder="Search for Pokémon" id="search-box" onInput={handleChange}></input>
-        <ul>
+        <input className="searchBox-input" type="text" placeholder="Search for Pokémon" id="search-box" onInput={handleChange}></input>
+
+
+        <ul className="search-results-dropdown">
           {next()}
         </ul>
-
 
 
       </div>
 
       <div className="Statistics">
 
-        {/*Used because url link to Farfetch'd doesnt have "'". Breaks link.  */}
-        {pokemon === 82 ? <h1>Farfetch'd</h1> : <h1>HP{pokedex[pokemon].base.Name}</h1>}
+        <h1>{specialPokeChar()}</h1>
         <p>HP {pokedex[pokemon].base.HP}</p>
         <p>Attack {pokedex[pokemon].base.Attack}</p>
         <p>Defense {pokedex[pokemon].base.Defense}</p>
@@ -117,7 +124,7 @@ function App(props) {
 
       <div id="randomise">
 
-        <button name="Random" onClick={randomise}>Random</button>
+        <button name="Random" className="randomise-btn" onClick={randomise}>Random</button>
 
       </div>
 

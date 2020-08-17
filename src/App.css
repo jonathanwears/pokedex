@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   font-size: 1em;
-  font-size: 5vw;
   justify-items: center;
   text-align: center;
  
@@ -10,35 +9,52 @@
 
 .searchBox {
   margin: auto;
+  width:25 vw;
+  position: relative;
+  
 
 }
-/*
-.searchBox > ul {
- display: flex;
- flex-direction: column;
- justify-content: center ;
- padding-left: 0px;
- height: 5em;
- 
+
+.searchBox-input {  
+  margin-top:5px;
+  font-size: 50em;
+  height: 1vh;
+  font-size: 1em;
+  height: 7vh;
+  
 }
-*/
+
+.search-results-dropdown {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  position: absolute;
+  align-items: stretch;
+  width: 100%;
+  font-size: 2em;
+  margin-top: 0px;
+  
+
+ }
+
 
 
 .Statistics {
 
 }
 
-
-
 button {
-  background-color: white;
-  height: 1vh;
-  font-size: .25em;
-  height: 5em;
- 
+  
+  font-size: .3em;
+  border-top: 0px;
+  
   
 }
 
+.randomise-btn {
+  
+  
+}
 
 .searchValueButton {
   background-color: white;
