@@ -1,7 +1,8 @@
+
 .App {
   display: flex;
   flex-direction: column;
-  font-size: 1em;
+  font-size: 15px;
   justify-items: center;
   text-align: center;
  
@@ -12,12 +13,15 @@
   width:25 vw;
   position: relative;
   
+}
+
+.Statistics {
+  font-size: 2.5vw;
 
 }
 
 .searchBox-input {  
   margin-top:5px;
-  font-size: 50em;
   height: 1vh;
   font-size: 1em;
   height: 7vh;
@@ -34,66 +38,73 @@
   font-size: 2em;
   margin-top: 0px;
   
-
  }
 
-
-
-.Statistics {
-
-}
-
-button {
-  
+button { 
   font-size: .3em;
   border-top: 0px;
-  
-  
-}
-
-.randomise-btn {
-  
+  background-color: #ffffff;
   
 }
 
 .searchValueButton {
-  background-color: white;
   padding: 1vw; 
  
-  
   }
-
-
 
 .Sprite > img {
 
-  max-height: 125px;
-  max-width: 125px;
+ max-width: 40%;
 
 }
 
+.randomise-btn {
 
 
-
+border: .1vw;
+border-style: solid;
+  
+}
 
 
 
 @media screen and (min-width: 750px){
 
     .App {
-      font-size: 3.2vw;
-  
+      font-size: 2.5em;
+      display: grid;
+      grid-template: "a a a " auto
+                     "b c c " auto 
+                     "d d d " auto;
+      }
+
+    .searchBox {
+      grid-column: 1/4;
     }
 
+
+    .Statistics {
+      grid-column: 1/2 ;
+      min-width: 40vw;
+      font-size: 2vw;
+      
+    }
+
+    .Sprite {
+      grid-column: 2/4;
+      min-width: 60vw;
+      place-self: center;
+
+    }
+
+    .randomise {
+      grid-column: 1/4;
+      
+    }
 
     .Sprite > img {
-
-      max-height: 50%;
       max-width: 50%;
-    
+     
+     }
 
-
-
-    }
-
-}
+} 

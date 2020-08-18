@@ -13,10 +13,10 @@ function App(props) {
     // I think this is being done twice?
     switch (pokemon) {
 
-      case 82: return <h1>Farfetch'd</h1>
-      case 32: return <h1>Nidoran♂</h1> //male -m
       case 29: return <h1>Nidoran♀</h1> // female -f  
-      default: return pokedex[pokemon].name.english
+      case 32: return <h1>Nidoran♂</h1> //male -m
+      case 82: return <h1>Farfetch'd</h1>
+      default: return <h1>{pokedex[pokemon].name.english}</h1>
 
     }
   }
@@ -100,7 +100,7 @@ function App(props) {
 
       <div className="Statistics">
 
-        <h1>{specialPokeChar()}</h1>
+        {specialPokeChar()}
         <p>HP {pokedex[pokemon].base.HP}</p>
         <p>Attack {pokedex[pokemon].base.Attack}</p>
         <p>Defense {pokedex[pokemon].base.Defense}</p>
