@@ -10,15 +10,14 @@ function App(props) {
   const searchEl = createRef();
 
   function specialPokeChar() {
-    // I think this is being done twice?
-    switch (pokemon) {
-
-      case 28: return <h1>Nidoran♀</h1> // female -f  
+      switch (pokemon) {
+      case 28: return <h1>Nidoran♀</h1> // female -f   
       case 31: return <h1>Nidoran♂</h1> //male -m
       case 82: return <h1>Farfetch'd</h1>
       default: return <h1>{pokedex[pokemon].name.english}</h1>
 
     }
+  
   }
 
   function randomise() {
@@ -58,7 +57,7 @@ function App(props) {
 
   }
 
-  function next() {
+  function searchResultsDropdown() {
 
     if (searchValue === []) {
 
@@ -90,11 +89,9 @@ function App(props) {
 
         <input className="searchBox-input" type="text" placeholder="Search for Pokémon" id="search-box" onInput={handleChange}></input>
 
-
         <ul className="search-results-dropdown">
-          {next()}
+          {searchResultsDropdown()}
         </ul>
-
 
       </div>
 
