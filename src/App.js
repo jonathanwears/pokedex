@@ -10,14 +10,14 @@ function App(props) {
   const searchEl = createRef();
 
   function specialPokeChar() {
-      switch (pokemon) {
+    switch (pokemon) {
       case 28: return <h1>Nidoran♀</h1> // female -f   
       case 31: return <h1>Nidoran♂</h1> //male -m
       case 82: return <h1>Farfetch'd</h1>
       default: return <h1>{pokedex[pokemon].name.english}</h1>
 
     }
-  
+
   }
 
   function randomise() {
@@ -34,9 +34,9 @@ function App(props) {
 
   }
 
-  function handleChange(e) {
+  function handleChange(event) {
 
-    const inputValue = e.target.value.trim();
+    const inputValue = event.target.value.trim();
 
     if (inputValue.length === 0) {
       setSearchValue([]);
@@ -92,19 +92,17 @@ function App(props) {
         <ul className="search-results-dropdown">
           {searchResultsDropdown()}
         </ul>
-
       </div>
 
       <div className="Statistics">
 
-        {specialPokeChar()}
+        {specialPokeChar}
         <p>HP {pokedex[pokemon].base.HP}</p>
         <p>Attack {pokedex[pokemon].base.Attack}</p>
         <p>Defense {pokedex[pokemon].base.Defense}</p>
         <p> Sp. Attack {pokedex[pokemon].base["Sp. Attack"]}</p>
         <p>Sp. Defense {pokedex[pokemon].base["Sp. Defense"]}</p>
         <p>Speed {pokedex[pokemon].base.Speed}</p>
-
       </div>
 
       <div className="Sprite">
@@ -116,7 +114,6 @@ function App(props) {
           alt={pokemon}
         >
         </img>
-
       </div>
 
       <div id="randomise">
@@ -124,7 +121,6 @@ function App(props) {
         <button name="Random" className="randomise-btn" onClick={randomise}>Random</button>
 
       </div>
-
     </div>
   );
 }
