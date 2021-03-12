@@ -1,102 +1,28 @@
-import React, { useState, createRef } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import pokedex from './assets/pokedex.json';
-import { pokemonLookUp } from './assets/pokemonLookUp.js'
+import RandomPokemon from './components/RandomPokemon';
+import SearchBox from "./components/SearchBox";
 
-function App(props) {
+function App() {
 
   const [pokemon, setPokemon] = useState(0);
-  const [searchValue, setSearchValue] = useState([]);
-  const searchEl = createRef();
 
-  function specialPokeChar() {
-    switch (pokemon) {
-      case 28: return <h1>Nidoran♀</h1> // female -f   
-      case 31: return <h1>Nidoran♂</h1> //male -m
-      case 82: return <h1>Farfetch'd</h1>
-      default: return <h1>{pokedex[pokemon].name.english}</h1>
-
-    }
-
+  function findPokemonIndex(pokemon) {
+      setPokemon(pokemon)
   }
 
-  function randomise() {
-    const randomNumber = Math.round(Math.random() * Math.floor(150));
-
-    if (pokemon === randomNumber) {
-      randomise();
-    }
-
-    else {
-      setPokemon(randomNumber);
-
-    }
-
-  }
-
-  function handleChange(event) {
-
-    const inputValue = event.target.value.trim();
-
-    if (inputValue.length === 0) {
-      setSearchValue([]);
-
-    } else {
-      const pokemonFilteredArr = pokemonLookUp.filter(el => el.toLowerCase().includes(inputValue.toLowerCase()))
-      setSearchValue(pokemonFilteredArr);
-
-    }
-
-  }
-
-  function searchResulthandleClick(event) {
-
-    const parsedPokemonId = setPokemon((parseInt(event.target.id)))
-    const SearchValueReset = document.getElementById("search-box").value = "";
-    setSearchValue([])
-
-  }
-
-  function searchResultsDropdown() {
-
-    if (searchValue === []) {
-
-      return
-
-    } else {
-
-      return searchValue.slice(0, 10).map(i =>
-
-        <button
-          className="searchValueButton"
-          key={i}
-          id={pokemonLookUp.indexOf((i))}
-          value={i}
-          ref={searchEl}
-          onClick={searchResulthandleClick}
-        >
-          {i}
-        </button >
-      )
-
-    }
-
-  }
 
   return (
     <div className="App">
       <div className="searchBox">
-
-        <input className="searchBox-input" type="text" placeholder="Search for Pokémon" id="search-box" onInput={handleChange}></input>
-
-        <ul className="search-results-dropdown">
-          {searchResultsDropdown()}
-        </ul>
+        <SearchBox 
+         findPokemonIndex={findPokemonIndex}
+        />   
       </div>
 
       <div className="Statistics">
 
-        {specialPokeChar}
         <p>HP {pokedex[pokemon].base.HP}</p>
         <p>Attack {pokedex[pokemon].base.Attack}</p>
         <p>Defense {pokedex[pokemon].base.Defense}</p>
@@ -115,14 +41,12 @@ function App(props) {
         >
         </img>
       </div>
-
-      <div id="randomise">
-
-        <button name="Random" className="randomise-btn" onClick={randomise}>Random</button>
-
-      </div>
+      <RandomPokemon 
+        findPokemonIndex={findPokemonIndex}
+      />
+      
+     
     </div>
   );
-}
-
+};
 export default App;

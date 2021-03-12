@@ -8,37 +8,11 @@
  
 }
 
-.searchBox {
-  margin: auto;
-  width:25 vw;
-  position: relative;
-  
-}
-
 .Statistics {
   font-size: 2.5vw;
 
 }
 
-.searchBox-input {  
-  margin-top:5px;
-  height: 1vh;
-  font-size: 1em;
-  height: 7vh;
-  
-}
-
-.search-results-dropdown {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0px;
-  position: absolute;
-  align-items: stretch;
-  width: 100%;
-  font-size: 2em;
-  margin-top: 0px;
-  
- }
 
 button { 
   font-size: .3em;

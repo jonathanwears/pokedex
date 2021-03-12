@@ -2,8 +2,7 @@
  This is used as the lookup for the search bar
 
 */
-
-export const pokemonLookUp = [
+ const lookUp =[
     "Bulbasaur",
     "Ivysaur",
     "Venusaur",
@@ -157,3 +156,5 @@ export const pokemonLookUp = [
     "Mew",
     "MissingNo."
 ]
+
+export default lookUp;
