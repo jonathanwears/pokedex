@@ -1,84 +1,130 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  height: 2rem;
+  width: 8rem;
+  background-color: white;
+  border-width: thin;
+}
 
 .App {
   display: flex;
-  flex-direction: column;
-  font-size: 15px;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.searchBox-input {
+  height: 2rem;
+  width: 15rem;
+   padding: 0;
+   padding-top: 10px;
+}
+
+.search-suggestions {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  background-color: white;
+  border-style: solid;
+  width: 15rem;
+  border-width: .1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search-suggestions li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin: 0;
+  border-bottom-style: solid;
+  border-width:thin;
+}
+
+.search-suggestions li:last-child {
+  border-bottom-style: none;
+}
+
+.container {
+  width: 80vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
   justify-items: center;
-  text-align: center;
- 
+  align-items: center;
 }
 
-.Statistics {
-  font-size: 2.5vw;
-
+.container img {
+  width: 50%;
+  height: 50%;
 }
 
+.img-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
-button { 
-  font-size: .3em;
-  border-top: 0px;
-  background-color: #ffffff;
+.statistics {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 60%;
+}
+
+.statistics-container h1 {
+  font-weight: 700;
+  font-size: 4rem;
+  padding-bottom: 0; 
+}
+
+.statistics ul {
+  list-style: none;
+  word-break: keep-all;
+  padding: 0;
   
 }
+.statistics ul:first-child {
+  padding-right: 20px;
+}
 
-.searchValueButton {
-  padding: 1vw; 
- 
+
+
+@media screen and (max-width: 800px){
+
+  button {
+    margin-top: 1rem;
+  }
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    height: auto;
   }
 
-.Sprite > img {
+  .statistics-container h1 {
+    font-size: 2.5rem;
+    padding-bottom: 0;   
+  }
 
- max-width: 40%;
+  .statistics {
+    font-size: 1.5rem;
+    padding-bottom: 0px;
+  }
 
+  .statistics ul:first-child {
+    padding-right:20px;
+   }
+   
+   .container img {
+    width: 50%;
+    height: 100%;
+  }
 }
-
-.randomise-btn {
-
-
-border: .1vw;
-border-style: solid;
-  
-}
-
-
-
-@media screen and (min-width: 750px){
-
-    .App {
-      font-size: 2.5em;
-      display: grid;
-      grid-template: "a a a " auto
-                     "b c c " auto 
-                     "d d d " auto;
-      }
-
-    .searchBox {
-      grid-column: 1/4;
-    }
-
-
-    .Statistics {
-      grid-column: 1/2 ;
-      min-width: 40vw;
-      font-size: 2vw;
-      
-    }
-
-    .Sprite {
-      grid-column: 2/4;
-      min-width: 60vw;
-      place-self: center;
-
-    }
-
-    .randomise {
-      grid-column: 1/4;
-      
-    }
-
-    .Sprite > img {
-      max-width: 50%;
-     
-     }
-
-} 

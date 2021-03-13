@@ -6,7 +6,7 @@ function RandomPokemon(props) {
 		const randomNumber = Math.round(Math.random() * Math.floor(150));
 		props.findPokemonIndex(randomNumber);
 	}
-	
+
 	return (
 		<div id="randomise">
 			<button name="random" className="randomise-btn" onClick={handleClick}>
@@ -14,6 +14,6 @@ function RandomPokemon(props) {
 			</button>
 		</div>
 	)
-}
+};
 
 export default RandomPokemon;

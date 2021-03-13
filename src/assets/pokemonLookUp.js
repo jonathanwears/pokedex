@@ -153,8 +153,7 @@
     "Dragonair",
     "Dragonite",
     "Mewtwo",
-    "Mew",
-    "MissingNo."
+    "Mew"
 ]
 
 export default lookUp;
