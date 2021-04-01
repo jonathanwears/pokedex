@@ -1,12 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 
-import pokedexJson from "../assets/pokedex.json"
-
-
-
-function SearchInput({ setFilteredPokemon }) {
-console.log(setFilteredPokemon)
-	const pokedex = useRef(pokedexJson.map(pokemon => pokemon.name.english))
+function SearchInput({ setFilteredPokemon, pokedex }) {
 
 	function handleOnChange(event) {
 		//remove any whitespace 
@@ -20,9 +14,8 @@ console.log(setFilteredPokemon)
 		};
 	};
 
-
-
 	return (
+
 		<input
 			className="searchBox-input"
 			type="text"
@@ -30,6 +23,7 @@ console.log(setFilteredPokemon)
 			placeholder="Search for Pokémon"
 			onChange={handleOnChange}
 		>
+
 		</input>
 	)
 

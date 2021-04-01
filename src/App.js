@@ -9,29 +9,27 @@ function App() {
 
   const [pokemon, setPokemon] = useState(0);
 
-  function findPokemonIndex(pokemon) {
-    setPokemon(pokemon);
-  }
-
   return (
+
     <div className="App">
-    
+
       <SearchBox
-        findPokemonIndex={findPokemonIndex}
+        setPokemon={setPokemon}
       />
 
-      <div className="container">
+      <section className="container">
         <Statistics
           pokemon={pokemon}
         />
 
         <PokemonImg
-          pokemon={pokemon} />
+          pokemon={pokemon}
+        />
 
-      </div>
+      </section>
 
       <RandomPokemon
-        findPokemonIndex={findPokemonIndex}
+        setPokemon={setPokemon}
       />
 
     </div>

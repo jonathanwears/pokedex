@@ -1,11 +1,11 @@
 import React from "react";
 
-function RandomPokemon(props) {
+function RandomPokemon({ setPokemon }) {
 
 	function handleClick() {
 		const randomNumber = Math.round(Math.random() * Math.floor(150));
-		props.findPokemonIndex(randomNumber);
-	}
+		setPokemon(randomNumber);
+	};
 
 	return (
 		<div id="randomise">
@@ -13,7 +13,7 @@ function RandomPokemon(props) {
 				Random
 			</button>
 		</div>
-	)
+	);
 };
 
 export default RandomPokemon;

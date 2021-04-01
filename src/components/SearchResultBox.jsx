@@ -1,31 +1,26 @@
 import React from "react";
 
-function SearchResultBox({findPokemonIndex, pokedex, filteredPokemon, value, setFilteredPokemon}) {
-	
-	function handleOnClick() {
-		findPokemonId(value);
+function SearchResultBox({ pokedex, filteredPokemon, setFilteredPokemon, setPokemon }) {
+
+	function handleOnClick(event) {
+
+		setPokemon(pokedex.current.indexOf(event.target.value));
+		setFilteredPokemon([]);
 	};
 
-	function findPokemonId(pokemon) {
-		findPokemonIndex(pokedex.current.indexOf(pokemon));
-		setFilteredPokemon([]);
-	}
 	return (
 
 		filteredPokemon.length >= 1 &&
 		<div className="search-suggestions">
 			{filteredPokemon.map((pokemon, index) => {
-				console.log(pokemon)
+
 				return (
-					<button key={index} onClick={handleOnClick} input={pokemon} value={pokemon}>
+					<button key={index} onClick={handleOnClick} value={pokemon}>
 						{pokemon}
 					</button>
-
 				)
 			})}
 		</div>
-
-
 	);
 };
 
