@@ -34,6 +34,7 @@ button {
   border-width: .1rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding-bottom: .5%;
 }
 
 .search-suggestions li {
@@ -45,12 +46,23 @@ button {
   margin: 0;
   border-bottom-style: solid;
   border-width:thin;
+  
 }
 
 .search-suggestions li:last-child {
   border-bottom-style: none;
 }
 
+.search-suggestions button {
+  width:100%;
+  border-style: none;
+
+}
+
+.search-suggestions button:hover {
+  background-color: #ffffaa;
+
+}
 .container {
   width: 80vw;
   height: 80vh;
