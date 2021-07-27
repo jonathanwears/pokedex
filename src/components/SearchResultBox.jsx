@@ -1,9 +1,10 @@
 import React from "react";
+import usePokemon from "../hooks/usePokemon";
 
-function SearchResultBox({ pokedex, filteredPokemon, setFilteredPokemon, setPokemon }) {
+function SearchResultBox({ pokedex, filteredPokemon, setFilteredPokemon }) {
 
+	const { setPokemon } = usePokemon();
 	function handleOnClick(event) {
-
 		setPokemon(pokedex.current.indexOf(event.target.value));
 		setFilteredPokemon([]);
 	};

@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react";
 import SearchResultBox from "./SearchResultBox";
 import pokedexJson from "../assets/pokedex.json";
 import SearchInput from "./SearchInput";
+import usePokemon from '../hooks/usePokemon';
 
-function SearchBox(props) {
+function SearchBox() {
+	const { setPokemon } = usePokemon();
 	const [filteredPokemon, setFilteredPokemon] = useState([]);
 	const pokedex = useRef(pokedexJson.map(pokemon => pokemon.name.english));
 
@@ -14,11 +16,10 @@ function SearchBox(props) {
 				<SearchInput setFilteredPokemon={setFilteredPokemon} pokedex={pokedex} />
 
 				<SearchResultBox
-					setPokemon={props.setPokemon}
+					setPokemon={setPokemon}
 					filteredPokemon={filteredPokemon}
 					setFilteredPokemon={setFilteredPokemon}
 					pokedex={pokedex}
-
 				/>
 
 			</form>

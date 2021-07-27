@@ -1,7 +1,9 @@
 import React from "react";
+import usePokemon from '../hooks/usePokemon';
 
-function RandomPokemon({ setPokemon }) {
-
+function RandomPokemon() {
+	const { setPokemon } = usePokemon();
+	
 	function handleClick() {
 		const randomNumber = Math.round(Math.random() * Math.floor(150));
 		setPokemon(randomNumber);
