@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import pokedex from "../assets/pokedex";
-import usePokemon from '../hooks/usePokemon';
+import { PokemonIndexContext } from "../hooks/pokemonContext";
 
 function PokemonImg() {
-const { pokemon } = usePokemon();
+	const [pokemon] = useContext(PokemonIndexContext);
 
 	return (
 		<div className="img-container">

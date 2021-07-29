@@ -1,11 +1,13 @@
-import React from "react";
-import usePokemon from "../hooks/usePokemon";
+import React, { useContext } from "react";
+import { PokemonIndexContext } from "../hooks/pokemonContext";
 
 function SearchResultBox({ pokedex, filteredPokemon, setFilteredPokemon }) {
-
-	const { setPokemon } = usePokemon();
+	const [, setPokemonIndex] = useContext(PokemonIndexContext);
+	
 	function handleOnClick(event) {
-		setPokemon(pokedex.current.indexOf(event.target.value));
+		console.log(" from search box click handler "  )
+		let a = pokedex.current.indexOf(event.target.value)
+		setPokemonIndex(a);
 		setFilteredPokemon([]);
 	};
 

@@ -1,12 +1,12 @@
-import React from "react";
-import usePokemon from '../hooks/usePokemon';
+import React, { useContext } from "react";
+import { PokemonIndexContext } from "../hooks/pokemonContext";
 
 function RandomPokemon() {
-	const { setPokemon } = usePokemon();
-	
+	const [, setPokemonIndex] = useContext(PokemonIndexContext);
+
 	function handleClick() {
 		const randomNumber = Math.round(Math.random() * Math.floor(150));
-		setPokemon(randomNumber);
+		setPokemonIndex(randomNumber);
 	};
 
 	return (

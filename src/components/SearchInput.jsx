@@ -23,7 +23,6 @@ function SearchInput({ setFilteredPokemon, pokedex }) {
 			placeholder="Search for Pokémon"
 			onChange={handleOnChange}
 		>
-
 		</input>
 	)
 
