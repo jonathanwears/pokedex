@@ -1,7 +1,7 @@
 # Pokedex created by React
 
 ## Project Description
-###### This project is created by react. It includes importing data from a json file into a **useContext** provider.
+###### This project is created by react. It includes importing data from a json file into a __useContext__ provider.
 ###### Included is an search suggestions dropdown filtered on typed letters. 
 
 ## Setup
