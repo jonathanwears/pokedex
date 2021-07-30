@@ -1,13 +1,13 @@
 import React from "react";
-import pokedex from "../hooks/pokedex";
+import pokedexEnglish from '../assets/pokedexEnglish';
 
 function SearchInput({ setFilteredPokemon }) {
 	function handleOnChange(event) {
 		//remove any whitespace 
 		const value = (event.target.value.trim()).toLowerCase();
 		if (value === "") return setFilteredPokemon([]);
-		
-		const filteredList = pokedex.filter(element => element.toLowerCase().includes(value)).slice(0, 10);
+	
+		const filteredList = pokedexEnglish.filter(element => element.toLowerCase().includes(value)).slice(0, 10);
 		setFilteredPokemon(filteredList);
 	};
 	
@@ -20,8 +20,7 @@ function SearchInput({ setFilteredPokemon }) {
 			onChange={handleOnChange}
 		>
 		</input>
-	)
-
+	);
 };
 
 export default SearchInput;

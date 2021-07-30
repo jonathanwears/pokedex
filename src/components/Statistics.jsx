@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import pokedex from '../assets/pokedex.json';
+import pokedex from '../assets/pokedex';
 import { PokemonIndexContext } from "../hooks/pokemonContext";
 
 function Statistics() {
-
 	const[pokemon] = useContext(PokemonIndexContext);
-
-	console.log("statistics " + pokemon)
+	console.log(pokemon)
 	return (
 		<div className="statistics-container">
 			<h1>{pokedex[pokemon].name.english}</h1>
