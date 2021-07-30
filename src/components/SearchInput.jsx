@@ -1,5 +1,5 @@
 import React from "react";
-import pokedexEnglish from '../assets/pokedexEnglish';
+import pokedexEnglish from "../assets/pokedexEnglish";
 
 function SearchInput({ setFilteredPokemon }) {
 	function handleOnChange(event) {
