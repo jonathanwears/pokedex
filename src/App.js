@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import PokemonImg from './components/PokemonImg';
 import RandomPokemon from './components/RandomPokemon';
-import SearchBox from "./components/SearchBox";
+import Search from "./components/Search";
 import Statistics from './components/Statistics';
 import { PokemonIndexProvider } from './hooks/pokemonContext';
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <PokemonIndexProvider>
       <div className="App">
-      <SearchBox />
+      <Search />
       <section className="container">
         <Statistics />
         <PokemonImg />

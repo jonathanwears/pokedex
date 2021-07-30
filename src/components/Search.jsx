@@ -3,7 +3,7 @@ import SearchResultBox from "./SearchResultBox";
 import pokedexJson from "../assets/pokedex.json";
 import SearchInput from "./SearchInput";
 
-function SearchBox() {
+function Search() {
 	const [filteredPokemon, setFilteredPokemon] = useState([]);
 	const pokedex = useRef(pokedexJson.map(pokemon => pokemon.name.english));
 
@@ -25,4 +25,4 @@ function SearchBox() {
 	);
 };
 
-export default SearchBox;
+export default Search;
