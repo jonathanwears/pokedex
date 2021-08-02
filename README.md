@@ -16,6 +16,6 @@ $ npm install
 $ npm start
 ```
 ## Technology used
-##### React, JSON , Create React App
+##### React, JSON, Create React App
 ## Notes
-##### The project continues to be improved. 
+##### The project continues to be improved over time. 
