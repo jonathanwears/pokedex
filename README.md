@@ -6,7 +6,7 @@
 ##### A search box takes the input and filters the top 10 matches from the context provider. This filtered list is then used to provide a dropdown list. Selecting an entry changes the id and changes the displayed information. 
 ##### There is also a randomise button.
 
-##### The above features can be found in: <br>  /src/components/Search <br>  /src/components/SearchInput <br>  /src/components/SearchResultsBox
+##### The above features can be found in: <br>  [/src/components/Search](../src/components/Search) <br>  [/src/components/SearchInput](../src/components/SearchInput) <br> [/src/components/SearchResultsBox](../src/components/SearchResultsBox)
 ## Setup
 To run this project, install it locally using npm:
 
